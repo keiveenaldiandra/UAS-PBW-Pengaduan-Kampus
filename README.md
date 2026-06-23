@@ -1,58 +1,267 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## Pengembang
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Nama : Keiveen Aldiandra
+NPM: 2408107010085
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# Sistem Pengaduan Kampus
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Deskripsi Aplikasi
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Sistem Pengaduan Kampus adalah aplikasi web berbasis Laravel yang digunakan untuk memudahkan mahasiswa dalam menyampaikan pengaduan terkait fasilitas, layanan, maupun kegiatan akademik di lingkungan kampus. Aplikasi ini memungkinkan pengguna mengirim pengaduan, melihat status pengaduan, serta membantu admin dalam mengelola dan menindaklanjuti laporan yang masuk.
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Fitur Utama
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+* Login dan autentikasi pengguna
+* Manajemen pengguna
+* Manajemen kategori pengaduan
+* Pembuatan pengaduan
+* Melihat daftar pengaduan
+* Manajemen status pengaduan
+* Dashboard admin
+* Sistem role dan permission
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+---
 
-## Agentic Development
+## Teknologi yang Digunakan
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+### Backend
+
+* PHP
+* Laravel Framework
+
+### Frontend
+
+* Blade Template Engine
+* HTML
+* CSS
+* JavaScript
+* Bootstrap
+* Vite
+
+### Database
+
+* MySQL
+
+### Tools
+
+* Composer
+* Node.js
+* NPM
+* Git
+* GitHub
+* XAMPP
+
+---
+
+## Struktur Database
+
+Tabel utama yang digunakan:
+
+* users
+* permissions
+* roles
+* kategoris
+* pengaduans
+
+Migration yang tersedia:
+
+* create_users_table
+* create_cache_table
+* create_jobs_table
+* create_permission_tables
+* create_kategoris_table
+* create_pengaduans_table
+
+---
+
+## Persyaratan Sistem
+
+Sebelum menjalankan aplikasi, pastikan telah menginstal:
+
+* PHP 8.x
+* Composer
+* Node.js
+* NPM
+* MySQL
+* XAMPP
+* Git
+
+---
+
+## Cara Instalasi
+
+### 1. Clone Repository
 
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+git clone https://github.com/keiveenaldiandra/UAS-PBW-Pengaduan-Kampus.git
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+Masuk ke folder project:
 
-## Contributing
+```bash
+cd UAS-PBW-Pengaduan-Kampus
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+### 2. Install Dependency Laravel
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+composer install
+```
 
-## Security Vulnerabilities
+Perintah ini akan mengunduh seluruh dependency Laravel dan membuat folder vendor.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
 
-## License
+### 3. Membuat File Environment
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+cp .env.example .env
+```
+
+---
+
+### 4. Generate Application Key
+
+```bash
+php artisan key:generate
+```
+
+Jika berhasil akan muncul:
+
+```text
+INFO  Application key set successfully.
+```
+
+---
+
+### 5. Konfigurasi Database
+
+Buka file:
+
+```text
+.env
+```
+
+Kemudian ubah konfigurasi database menjadi:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=pengaduan_kampus
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+---
+
+### 6. Menjalankan MySQL
+
+* Jalankan XAMPP
+* Start Apache
+* Start MySQL
+
+Pastikan database:
+
+```text
+pengaduan_kampus
+```
+
+sudah tersedia pada phpMyAdmin.
+
+---
+
+### 7. Membersihkan Cache Konfigurasi
+
+```bash
+php artisan config:clear
+php artisan cache:clear
+```
+
+---
+
+### 8. Verifikasi Koneksi Database
+
+```bash
+php artisan migrate:status
+```
+
+Jika berhasil, seluruh migration akan berstatus:
+
+```text
+Ran
+```
+
+---
+
+### 9. Install Dependency Frontend
+
+```bash
+npm install
+```
+
+Perintah ini akan mengunduh seluruh package JavaScript dan membuat folder node_modules.
+
+---
+
+### 10. Menjalankan Vite
+
+```bash
+npm run dev
+```
+
+Vite digunakan untuk mengelola asset frontend seperti CSS dan JavaScript selama proses development.
+
+---
+
+### 11. Menjalankan Laravel
+
+Buka terminal baru kemudian jalankan:
+
+```bash
+php artisan serve
+```
+
+Jika berhasil akan muncul:
+
+```text
+INFO Server running on http://127.0.0.1:8000
+```
+
+Buka browser dan akses:
+
+```text
+http://127.0.0.1:8000
+```
+
+---
+
+## Cara Penggunaan
+
+### Admin
+
+* Login ke sistem
+* Mengelola kategori pengaduan
+* Mengelola data pengguna
+* Melihat seluruh pengaduan
+* Mengubah status pengaduan
+* Mengelola hak akses pengguna
+
+### Pengguna
+
+* Login ke sistem
+* Membuat pengaduan
+* Melihat daftar pengaduan
+* Memantau status pengaduan
+
+---
+
+## Repository GitHub
+
+https://github.com/keiveenaldiandra/UAS-PBW-Pengaduan-Kampus
